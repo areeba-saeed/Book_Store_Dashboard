@@ -12,7 +12,7 @@ const Sidebar = () => {
   useEffect(() => {
     axios
       .get(
-        "https://protected-plateau-82492-26f0113d64bb.herokuapp.com/api/orders"
+        "https://bookeriaapi-4c4e83f96829.herokuapp.com/api/orders"
       )
       .then((response) => {
         if (response.data.length > 0) {

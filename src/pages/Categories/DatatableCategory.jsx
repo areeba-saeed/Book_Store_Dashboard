@@ -19,7 +19,7 @@ const DatatableCategory = () => {
 
   useEffect(() => {
     axios
-      .get("https://protected-plateau-82492-26f0113d64bb.herokuapp.com/api/categories")
+      .get("https://bookeriaapi-4c4e83f96829.herokuapp.com/api/categories")
       .then((response) => {
         setcategories(response.data);
       })
@@ -35,7 +35,7 @@ const DatatableCategory = () => {
     formData.append("image", image);
 
     axios
-      .post("https://protected-plateau-82492-26f0113d64bb.herokuapp.com/api/categories", formData)
+      .post("https://bookeriaapi-4c4e83f96829.herokuapp.com/api/categories", formData)
       .then((res) => {
         console.log(res.data);
         setcategories(res.data);
@@ -61,7 +61,7 @@ const DatatableCategory = () => {
     formData.append("name", name);
     formData.append("image", image);
     axios
-      .patch(`https://protected-plateau-82492-26f0113d64bb.herokuapp.com/api/categories/${id}`, formData)
+      .patch(`https://bookeriaapi-4c4e83f96829.herokuapp.com/api/categories/${id}`, formData)
       .then((res) => {
         setPopupText(`Category Updated`);
         setname("");
@@ -80,7 +80,7 @@ const DatatableCategory = () => {
 
   const handleDelete = (id) => {
     axios
-      .delete("https://protected-plateau-82492-26f0113d64bb.herokuapp.com/api/categories/" + id)
+      .delete("https://bookeriaapi-4c4e83f96829.herokuapp.com/api/categories/" + id)
       .then((response) => {
         console.log(response.data);
         setPopupshow(true);
@@ -94,7 +94,7 @@ const DatatableCategory = () => {
   const handleDeleteSelectedRows = () => {
     selectedRows.forEach((row) => {
       axios
-        .delete("https://protected-plateau-82492-26f0113d64bb.herokuapp.com/api/categories/" + row)
+        .delete("https://bookeriaapi-4c4e83f96829.herokuapp.com/api/categories/" + row)
         .then((response) => {
           setcategories(response.data);
           setPopupshow(true);
@@ -114,7 +114,7 @@ const DatatableCategory = () => {
       headerName: "Image",
       width: 200,
       renderCell: (params) => {
-        const imageUrl = `https://protected-plateau-82492-26f0113d64bb.herokuapp.com/api/categories/images/${params.row.image}`;
+        const imageUrl = `https://bookeriaapi-4c4e83f96829.herokuapp.com/api/categories/images/${params.row.image}`;
         return (
           <img
             src={imageUrl}

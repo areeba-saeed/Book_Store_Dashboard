@@ -27,7 +27,7 @@ const UpdateBook = ({ title }) => {
 
   useEffect(() => {
     axios
-      .get("https://protected-plateau-82492-26f0113d64bb.herokuapp.com/api/categories")
+      .get("https://bookeriaapi-4c4e83f96829.herokuapp.com/api/categories")
       .then((response) => {
         setAllCategories(response.data);
       })
@@ -35,7 +35,7 @@ const UpdateBook = ({ title }) => {
         console.log(error);
       });
     axios
-      .get("https://protected-plateau-82492-26f0113d64bb.herokuapp.com/api/authors")
+      .get("https://bookeriaapi-4c4e83f96829.herokuapp.com/api/authors")
       .then((response) => {
         setAllAuthors(response.data);
       })
@@ -55,7 +55,7 @@ const UpdateBook = ({ title }) => {
     formData.append("author", author);
 
     axios
-      .patch(`https://protected-plateau-82492-26f0113d64bb.herokuapp.com/api/books/${id}`, formData)
+      .patch(`https://bookeriaapi-4c4e83f96829.herokuapp.com/api/books/${id}`, formData)
       .then((res) => {
         console.log(res.data);
         setPopupshow(true);

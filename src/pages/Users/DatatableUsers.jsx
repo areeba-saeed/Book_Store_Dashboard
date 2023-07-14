@@ -14,7 +14,7 @@ const DatatableUsers = () => {
 
   useEffect(() => {
     axios
-      .get("https://protected-plateau-82492-26f0113d64bb.herokuapp.com/api/user")
+      .get("https://bookeriaapi-4c4e83f96829.herokuapp.com/api/user")
       .then((response) => {
         setUsers(response.data);
       })
@@ -25,7 +25,7 @@ const DatatableUsers = () => {
 
   const handleDelete = (id) => {
     axios
-      .delete("https://protected-plateau-82492-26f0113d64bb.herokuapp.com/api/user/delete/" + id)
+      .delete("https://bookeriaapi-4c4e83f96829.herokuapp.com/api/user/delete/" + id)
       .then((response) => {
         console.log(response.data);
       });
@@ -40,7 +40,7 @@ const DatatableUsers = () => {
   const handleDeleteSelectedRows = () => {
     selectedRows.forEach((row) => {
       axios
-        .delete("https://protected-plateau-82492-26f0113d64bb.herokuapp.com/api/user/delete/" + row)
+        .delete("https://bookeriaapi-4c4e83f96829.herokuapp.com/api/user/delete/" + row)
         .then((response) => {
           setPopupshow(true);
           setPopupText(`${selectedRows.length} Users Deleted`);

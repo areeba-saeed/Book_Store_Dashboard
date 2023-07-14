@@ -19,7 +19,7 @@ const Widget = ({ type }) => {
   useEffect(() => {
     axios
       .get(
-        "https://protected-plateau-82492-26f0113d64bb.herokuapp.com/api/books"
+        "https://bookeriaapi-4c4e83f96829.herokuapp.com/api/books"
       )
       .then((response) => {
         setBooks(response.data.length);
@@ -29,7 +29,7 @@ const Widget = ({ type }) => {
       });
     axios
       .get(
-        "https://protected-plateau-82492-26f0113d64bb.herokuapp.com/api/users"
+        "https://bookeriaapi-4c4e83f96829.herokuapp.com/api/users"
       )
       .then((response) => {
         setUsers(response.data.length);
@@ -39,7 +39,7 @@ const Widget = ({ type }) => {
       });
     axios
       .get(
-        "https://protected-plateau-82492-26f0113d64bb.herokuapp.com/api/categories"
+        "https://bookeriaapi-4c4e83f96829.herokuapp.com/api/categories"
       )
       .then((response) => {
         setCategories(response.data.length);
@@ -49,7 +49,7 @@ const Widget = ({ type }) => {
       });
     axios
       .get(
-        "https://protected-plateau-82492-26f0113d64bb.herokuapp.com/api/authors"
+        "https://bookeriaapi-4c4e83f96829.herokuapp.com/api/authors"
       )
       .then((response) => {
         setAuthors(response.data.length);
@@ -59,7 +59,7 @@ const Widget = ({ type }) => {
       });
     axios
       .get(
-        "https://protected-plateau-82492-26f0113d64bb.herokuapp.com/api/orders"
+        "https://bookeriaapi-4c4e83f96829.herokuapp.com/api/orders"
       )
       .then((response) => {
         const newOrdersFind = response.data.filter(

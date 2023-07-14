@@ -18,7 +18,7 @@ const DatatableOrders = () => {
   useEffect(() => {
     axios
       .get(
-        "https://protected-plateau-82492-26f0113d64bb.herokuapp.com/api/orders"
+        "https://bookeriaapi-4c4e83f96829.herokuapp.com/api/orders"
       )
       .then((response) => {
         setorders(response.data);
@@ -31,7 +31,7 @@ const DatatableOrders = () => {
   const handleDelete = (id) => {
     axios
       .delete(
-        "https://protected-plateau-82492-26f0113d64bb.herokuapp.com/api/orders/" +
+        "https://bookeriaapi-4c4e83f96829.herokuapp.com/api/orders/" +
           id
       )
       .then((response) => {
@@ -51,7 +51,7 @@ const DatatableOrders = () => {
     };
     axios
       .patch(
-        "https://protected-plateau-82492-26f0113d64bb.herokuapp.com/api/orders/" +
+        "https://bookeriaapi-4c4e83f96829.herokuapp.com/api/orders/" +
           id,
         updatedStatus
       )
@@ -69,7 +69,7 @@ const DatatableOrders = () => {
     selectedRows.forEach((row) => {
       axios
         .delete(
-          "https://protected-plateau-82492-26f0113d64bb.herokuapp.com/api/orders/" +
+          "https://bookeriaapi-4c4e83f96829.herokuapp.com/api/orders/" +
             row
         )
         .then((response) => {
@@ -272,7 +272,7 @@ const DatatableOrders = () => {
               </div>
               <div>
                 {selectedRow.items.map((data, index) => {
-                  const imageUrl = `https://protected-plateau-82492-26f0113d64bb.herokuapp.com/api/books/images/${data.productId.image}`;
+                  const imageUrl = `https://bookeriaapi-4c4e83f96829.herokuapp.com/api/books/images/${data.productId.image}`;
                   return (
                     <div style={{ margin: "30px 0px" }}>
                       <div className="modalOrder" key={index}>

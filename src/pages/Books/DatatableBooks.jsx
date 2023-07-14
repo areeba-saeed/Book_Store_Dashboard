@@ -19,7 +19,7 @@ const DatatableBooks = () => {
 
   useEffect(() => {
     axios
-      .get("https://protected-plateau-82492-26f0113d64bb.herokuapp.com/api/books")
+      .get("https://bookeriaapi-4c4e83f96829.herokuapp.com/api/books")
       .then((response) => {
         if (response.data.length > 0) {
           setbooks(response.data);
@@ -31,7 +31,7 @@ const DatatableBooks = () => {
   }, []);
 
   const handleDelete = (id) => {
-    axios.delete("https://protected-plateau-82492-26f0113d64bb.herokuapp.com/api/books/" + id).then((response) => {
+    axios.delete("https://bookeriaapi-4c4e83f96829.herokuapp.com/api/books/" + id).then((response) => {
       console.log(response.data);
     });
 
@@ -46,7 +46,7 @@ const DatatableBooks = () => {
   const handleDeleteSelectedRows = () => {
     selectedRows.forEach((row) => {
       axios
-        .delete("https://protected-plateau-82492-26f0113d64bb.herokuapp.com/api/books/" + row)
+        .delete("https://bookeriaapi-4c4e83f96829.herokuapp.com/api/books/" + row)
         .then((response) => {
           setbooks(response.data);
           setPopupshow(true);
@@ -63,7 +63,7 @@ const DatatableBooks = () => {
     const formData = new FormData();
     formData.append("image", image);
     axios
-      .patch(`https://protected-plateau-82492-26f0113d64bb.herokuapp.com/api/books/bookImage/${id}`, formData)
+      .patch(`https://bookeriaapi-4c4e83f96829.herokuapp.com/api/books/bookImage/${id}`, formData)
       .then((response) => {
         setImages(response.data);
         setPopupshow(true);
@@ -94,7 +94,7 @@ const DatatableBooks = () => {
       headerName: "Image",
       width: 200,
       renderCell: (params) => {
-        const imageUrl = `https://protected-plateau-82492-26f0113d64bb.herokuapp.com/api/books/images/${params.row.image}`;
+        const imageUrl = `https://bookeriaapi-4c4e83f96829.herokuapp.com/api/books/images/${params.row.image}`;
         return (
           <img
             src={imageUrl}
@@ -174,7 +174,7 @@ const DatatableBooks = () => {
 
               <div>
                 <img
-                  src={`https://protected-plateau-82492-26f0113d64bb.herokuapp.com/api/books/images/${selectedRow.image}`}
+                  src={`https://bookeriaapi-4c4e83f96829.herokuapp.com/api/books/images/${selectedRow.image}`}
                   alt={selectedRow.image}
                 />
               </div>
@@ -204,7 +204,7 @@ const DatatableBooks = () => {
               </form>
               <div>
                 {images.map((row) => {
-                  const imageUrl = `https://protected-plateau-82492-26f0113d64bb.herokuapp.com/api/books/images/${row}`;
+                  const imageUrl = `https://bookeriaapi-4c4e83f96829.herokuapp.com/api/books/images/${row}`;
                   return (
                     <div>
                       <img src={imageUrl} alt={row} />

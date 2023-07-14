@@ -25,7 +25,7 @@ const NewBook = ({ title }) => {
 
   useEffect(() => {
     axios
-      .get("https://protected-plateau-82492-26f0113d64bb.herokuapp.com/api/categories")
+      .get("https://bookeriaapi-4c4e83f96829.herokuapp.com/api/categories")
       .then((response) => {
         setAllCategories(response.data);
       })
@@ -33,7 +33,7 @@ const NewBook = ({ title }) => {
         console.log(error);
       });
     axios
-      .get("https://protected-plateau-82492-26f0113d64bb.herokuapp.com/api/authors")
+      .get("https://bookeriaapi-4c4e83f96829.herokuapp.com/api/authors")
       .then((response) => {
         setAllAuthors(response.data);
       })
@@ -53,7 +53,7 @@ const NewBook = ({ title }) => {
     formData.append("author", author);
 
     axios
-      .post("https://protected-plateau-82492-26f0113d64bb.herokuapp.com/api/books/", formData)
+      .post("https://bookeriaapi-4c4e83f96829.herokuapp.com/api/books/", formData)
       .then((response) => {
         setName("");
         setPrice("");

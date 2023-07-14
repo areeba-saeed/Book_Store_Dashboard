@@ -18,7 +18,7 @@ const DatatableAuthors = () => {
 
   useEffect(() => {
     axios
-      .get("https://protected-plateau-82492-26f0113d64bb.herokuapp.com/api/authors")
+      .get("https://bookeriaapi-4c4e83f96829.herokuapp.com/api/authors")
       .then((response) => {
         setauthors(response.data);
       })
@@ -32,7 +32,7 @@ const DatatableAuthors = () => {
     const data = { name: name };
 
     axios
-      .post("https://protected-plateau-82492-26f0113d64bb.herokuapp.com/api/authors", data)
+      .post("https://bookeriaapi-4c4e83f96829.herokuapp.com/api/authors", data)
       .then((res) => {
         setPopupText(`Author Added`);
         setname("");
@@ -55,7 +55,7 @@ const DatatableAuthors = () => {
     const data = { name: name };
 
     axios
-      .patch(`https://protected-plateau-82492-26f0113d64bb.herokuapp.com/api/authors/${id}`, data)
+      .patch(`https://bookeriaapi-4c4e83f96829.herokuapp.com/api/authors/${id}`, data)
       .then((res) => {
         setPopupText(`Author Updated`);
         setname("");
@@ -73,7 +73,7 @@ const DatatableAuthors = () => {
   };
 
   const handleDelete = (id) => {
-    axios.delete("https://protected-plateau-82492-26f0113d64bb.herokuapp.com/api/authors/" + id).then((response) => {
+    axios.delete("https://bookeriaapi-4c4e83f96829.herokuapp.com/api/authors/" + id).then((response) => {
       console.log(response.data);
       setPopupshow(true);
       setPopupText("Authors Deleted");
@@ -86,7 +86,7 @@ const DatatableAuthors = () => {
   const handleDeleteSelectedRows = () => {
     selectedRows.forEach((row) => {
       axios
-        .delete("https://protected-plateau-82492-26f0113d64bb.herokuapp.com/api/authors/" + row)
+        .delete("https://bookeriaapi-4c4e83f96829.herokuapp.com/api/authors/" + row)
         .then((response) => {
           setauthors(response.data);
           setPopupshow(true);
